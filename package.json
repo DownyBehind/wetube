@@ -1,0 +1,10 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "Cloning Youtude with vanilla js and node js",
+  "main": "index.js",
+  "author": "dawoon kim",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
