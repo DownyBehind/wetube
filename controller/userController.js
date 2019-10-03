@@ -1,7 +1,35 @@
-export const join = (req, res) => res.render("join", { pageTitle: "Join" });
-export const login = (req, res) => res.render("login", { pageTitle: "Log in" });
-export const logout = (req, res) =>
-  res.render("logout", { pageTitle: "Log out" });
+import routes from "../routes";
+
+export const getJoin = (req, res) => {
+  res.render("join", { pageTitle: "Join" });
+};
+export const postJoin = (req, res) => {
+  console.log(req.body); // how can we use this req.body is we already call bodyParser in app.js
+
+  const {
+    body: { name, email, password, password2 }
+  } = req;
+  if (password !== password2) {
+    res.status(400); //bad request
+    res.render("join", { pageTitle: "Join" });
+  } else {
+    // To Do : Register User
+    // To Do : Log user in
+    res.redirect(routes.home);
+  }
+};
+
+export const getLogin = (req, res) =>
+  res.render("login", { pageTitle: "Log in" });
+export const postLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
+export const logout = (req, res) => {
+  //To Do : Process Log out
+  res.redirect(routes.home);
+};
+
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "User Detail" });
 export const editProfile = (req, res) =>

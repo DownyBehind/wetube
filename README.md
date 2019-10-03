@@ -5,8 +5,8 @@ Cloning Youtude with vanilla js and node js
 ## Pages :
 
 - [ ] Home
-- [ ] Join
-- [ ] Login
+- [x] Join
+- [x] Login
 - [x] Search
 - [ ] User Detail
 - [ ] Edit Profile
