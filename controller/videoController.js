@@ -1,6 +1,14 @@
 export const home = (req, res) => res.render("home", { pageTitle: "Home" });
-export const search = (req, res) =>
-  res.render("search", { pageTitle: "Search" });
+
+export const search = (req, res) => {
+  //const searchingBy = req.query.term; //before ES6 syntax
+  const {
+    query: { term: searchingBy }
+  } = req; // this means "searchingBy = req.query.term"
+  console.log(searchingBy);
+  res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
+};
+
 export const upload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 export const videoDetail = (req, res) =>
